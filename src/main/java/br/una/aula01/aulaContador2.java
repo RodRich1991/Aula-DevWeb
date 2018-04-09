@@ -1,11 +1,13 @@
 package br.una.aula01;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by 101162011 on 05/04/2018.
  */
+@Controller
 public class aulaContador2 {
 
     int cont =0;
@@ -27,14 +29,14 @@ public class aulaContador2 {
 
     @GetMapping("/cont-som")
     @ResponseBody
-    public void contamais(){
+    public String contamais(){
         cont++;
-        criaTela();
+        return contador2();
    }
     @GetMapping("/cont-sub")
     @ResponseBody
-    public void contamenos(){
-        cont++;
-        criaTela();
+    public String contamenos(){
+        cont--;
+        return contador2();
     }
 }
